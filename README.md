@@ -15,4 +15,4 @@ Features:
 Screenshot:
 -----------
 
-![http://www.lepem.ufc.br/jaa/Southernlights.png](Screenshot)
+![Screenshot](http://www.lepem.ufc.br/jaa/Southernlights.png "Screenshot")
