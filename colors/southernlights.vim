@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Thu Dec 18, 2014  06:38PM
+" Last Change: Wed Jun 10, 2015  06:09PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -31,8 +31,8 @@ if &t_Co < 256 && !has("gui_running")
     hi Function cterm=none ctermfg=cyan
     hi PreProc cterm=none ctermfg=lightblue
     hi Type cterm=none ctermfg=lightgreen
-    hi Pmenu	ctermfg=cyan	ctermbg=magenta
-    hi PmenuSel	ctermfg=white	ctermbg=magenta
+    hi Pmenu	ctermfg=black	ctermbg=darkgreen
+    hi PmenuSel	ctermfg=darkblue	ctermbg=lightgreen
     hi Character cterm=none
     hi SpellLocal ctermfg=black ctermbg=green
     "hi StatusLine	cterm=none ctermfg=white	ctermbg=gray
@@ -52,7 +52,7 @@ if &t_Co < 256 && !has("gui_running")
     hi mailQuoted5 ctermfg=blue
     hi mailQuoted6 ctermfg=blue
     hi mailSignature ctermfg=darkcyan
-    hi SignColumn ctermfg=45 ctermbg=239 guifg=#00d7ff guibg=#4e4e4e
+    hi SignColumn ctermfg=yellow ctermbg=green
     hi ShowMarksHLl ctermfg=yellow ctermbg=green
     hi ShowMarksHLu ctermfg=yellow ctermbg=green
     hi ShowMarksHLo ctermfg=yellow ctermbg=green
@@ -96,7 +96,7 @@ hi PreProc	ctermfg=201	ctermbg=none	guifg=#ff40ff
 hi Question	ctermfg=115	guifg=#87d7af
 hi Search	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
-hi SignColumn	ctermfg=45	ctermbg=239	guifg=#00d7ff	guibg=#4e4e4e
+hi SignColumn	ctermfg=45	ctermbg=240	guifg=#ffff5f	guibg=#585858
 hi Special	ctermfg=221	guifg=#ffd75f
 hi SpecialKey	ctermfg=86	guifg=#00ffff
 hi SpellBad	ctermfg=196	ctermbg=none	cterm=underline	guisp=#ff0000	gui=undercurl
@@ -104,8 +104,8 @@ hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guisp=#00AA00	gui=undercur
 hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guisp=#ff00ff	gui=undercurl
 hi SpellCap	ctermfg=33	ctermbg=none	cterm=underline	guisp=#0087ff	gui=undercurl
 hi Statement	ctermfg=226	guifg=yellow	cterm=none	gui=none
-hi StatusLine	ctermfg=231	ctermbg=239	guifg=white	guibg=#4e4e4e	gui=none	cterm=bold
-hi StatusLineNC	ctermfg=16	ctermbg=239	guifg=black	guibg=#4e4e4e	gui=none	cterm=none
+hi StatusLine	ctermfg=16	ctermbg=244	guifg=white	guibg=#4e4e4e	gui=none	cterm=none
+hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#4e4e4e	gui=none	cterm=none
 hi VertSplit	ctermfg=16	ctermbg=239	guifg=black	guibg=gray30	gui=none	cterm=none
 hi TabLineSel	ctermfg=16	ctermbg=244	cterm=none	guifg=black	guibg=#808080	gui=none
 hi TabLine	ctermfg=16	ctermbg=240	cterm=none	guifg=black	guibg=#585858	gui=none
@@ -116,7 +116,7 @@ hi Type		ctermfg=77	guifg=#5fd75f	gui=none
 hi Visual	ctermfg=248	guifg=#a8a8a8	ctermbg=237 	guibg=#3a3a3a
 hi VisualNOS	term=bold,underline		cterm=bold,underline		gui=bold,underline
 hi WarningMsg	ctermfg=196
-hi WildMenu	ctermfg=16	ctermfg=226	guifg=#000000	guibg=#ffff00
+hi WildMenu	ctermfg=16	ctermbg=226	guifg=#000000	guibg=#ffff00
 hi ErrorMsg ctermfg=231 ctermbg=196 guifg=#ffffff guibg=#ff0000
 
 " TODO: Implement:
@@ -172,3 +172,9 @@ hi ShowMarksHLl		ctermfg=227	ctermbg=28	guifg=#ffff5f	guibg=#008700
 hi ShowMarksHLu		ctermfg=227	ctermbg=28	guifg=#ffff5f	guibg=#008700
 hi ShowMarksHLo		ctermfg=227	ctermbg=28	guifg=#ffff5f	guibg=#008700
 hi ShowMarksHLm		ctermfg=227	ctermbg=196	guifg=#ffff5f	guibg=#ff005f
+
+" csv.vim plugin
+hi CSVColumnHeaderOdd	ctermfg=46	ctermbg=236	guifg=#00ff00	guibg=#303030
+hi CSVColumnHeaderEven	ctermfg=45	ctermbg=236	guifg=#00d7ff	guibg=#303030
+hi CSVColumnOdd		ctermfg=40	guifg=#00d700
+hi CSVColumnEven	ctermfg=39	guifg=#00afff
