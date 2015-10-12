@@ -2,15 +2,15 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Wed Jun 10, 2015  06:09PM
+" Last Change: Mon Oct 12, 2015  10:55AM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
 
 
-hi clear
-
 set background=dark
+
+hi clear
 
 if exists("syntax_on")
   syntax reset
@@ -84,7 +84,7 @@ hi CursorLineNr	ctermfg=16	ctermbg=243	guifg=Black	guibg=#585858
 hi MatchParen	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi NonText	ctermfg=21	guifg=#0000ff
 hi Number	ctermfg=223	guifg=#ffd7af
-hi Normal	ctermfg=253	ctermbg=none	guifg=#dadada	guibg=Black
+hi Normal	ctermfg=253	ctermbg=16	guifg=#dadada	guibg=Black
 hi MoreMsg	ctermfg=36	guifg=#00af87
 hi ModeMsg	ctermfg=253	guifg=#dadada
 hi Operator	ctermfg=204	guifg=#ff5f87
