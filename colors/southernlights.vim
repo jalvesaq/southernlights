@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Mon Oct 12, 2015  10:55AM
+" Last Change: Sun Feb 07, 2016  12:52PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -113,6 +113,7 @@ hi TabLineFill	ctermfg=16	ctermbg=235	cterm=none	guifg=black	guibg=#262626	gui=n
 hi String	ctermfg=229	guifg=#ffffaf
 hi Title	cterm=bold	ctermfg=201	gui=bold	guifg=Magenta
 hi Type		ctermfg=77	guifg=#5fd75f	gui=none
+hi Underlined	ctermfg=105	guifg=#8787ff	cterm=underline	gui=underline
 hi Visual	ctermfg=248	guifg=#a8a8a8	ctermbg=237 	guibg=#3a3a3a
 hi VisualNOS	term=bold,underline		cterm=bold,underline		gui=bold,underline
 hi WarningMsg	ctermfg=196
