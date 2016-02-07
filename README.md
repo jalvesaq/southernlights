@@ -15,7 +15,7 @@ Vim color scheme
 
 ## Screenshot
 
-![Screenshot](https://dadoseteorias.files.wordpress.com/2016/01/southernlights.png "Screenshot")
+![Screenshot](https://raw.githubusercontent.com/jalvesaq/southernlights/screenshot.png "Screenshot")
 
 ## Bash configuration
 
