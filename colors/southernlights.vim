@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Sun Feb 07, 2016  12:52PM
+" Last Change: Sun Feb 21, 2016  05:07PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -69,10 +69,10 @@ hi Cursor	ctermfg=16	ctermbg=28	cterm=bold	guifg=Black	guibg=Green	gui=bold
 hi CursorLine	ctermbg=235	cterm=none	guibg=#262626	gui=none
 hi CursorColumn	ctermbg=235	cterm=none	guibg=#262626	gui=none
 hi ColorColumn	ctermbg=235	cterm=none	guibg=#262626	gui=none
-hi DiffAdd	ctermfg=227	ctermbg=22	guifg=#d7ff5f	guibg=#005f00
-hi DiffDelete	ctermfg=227	ctermbg=88	guifg=#ffafff	guibg=#870000
-hi DiffChange	ctermfg=227	ctermbg=58	guifg=#ffafff	guibg=#5f5f00
-hi DiffText	ctermfg=227	ctermbg=88	guifg=#ffafff	guibg=#870000	cterm=none	gui=none
+hi DiffAdd	ctermfg=227	ctermbg=22	guifg=#ffff5f	guibg=#005f00
+hi DiffDelete	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000
+hi DiffChange	ctermfg=227	ctermbg=58	guifg=#ffff5f	guibg=#5f5f00
+hi DiffText	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000	cterm=none	gui=none
 hi Error	ctermfg=231	cterm=none	ctermbg=196	gui=none	guifg=White	guibg=Red
 hi Directory	ctermfg=33	guifg=#0087ff
 hi Folded	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
@@ -82,7 +82,7 @@ hi Identifier	ctermfg=86	cterm=none	guifg=cyan	gui=none
 hi LineNr	ctermfg=16	ctermbg=240	guifg=Black	guibg=#585858
 hi CursorLineNr	ctermfg=16	ctermbg=243	guifg=Black	guibg=#585858
 hi MatchParen	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
-hi NonText	ctermfg=21	guifg=#0000ff
+hi NonText	ctermfg=21	guifg=#0000ff	term=none	gui=none
 hi Number	ctermfg=223	guifg=#ffd7af
 hi Normal	ctermfg=253	ctermbg=16	guifg=#dadada	guibg=Black
 hi MoreMsg	ctermfg=36	guifg=#00af87
@@ -92,7 +92,7 @@ hi Pmenu	ctermfg=119	ctermbg=22	guifg=#87ff5f	guibg=#005f00
 hi PmenuSel	ctermfg=226	ctermbg=28	guifg=Yellow	guibg=#008700
 hi PmenuSbar	ctermbg=244	guibg=#808080
 hi PmenuThumb	ctermbg=251	guibg=#c6c6c6
-hi PreProc	ctermfg=201	ctermbg=none	guifg=#ff40ff
+hi PreProc	ctermfg=207	ctermbg=none	guifg=#ff5fff
 hi Question	ctermfg=115	guifg=#87d7af
 hi Search	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
@@ -104,12 +104,13 @@ hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guisp=#00AA00	gui=undercur
 hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guisp=#ff00ff	gui=undercurl
 hi SpellCap	ctermfg=33	ctermbg=none	cterm=underline	guisp=#0087ff	gui=undercurl
 hi Statement	ctermfg=226	guifg=yellow	cterm=none	gui=none
-hi StatusLine	ctermfg=16	ctermbg=244	guifg=white	guibg=#4e4e4e	gui=none	cterm=none
-hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#4e4e4e	gui=none	cterm=none
-hi VertSplit	ctermfg=16	ctermbg=239	guifg=black	guibg=gray30	gui=none	cterm=none
-hi TabLineSel	ctermfg=16	ctermbg=244	cterm=none	guifg=black	guibg=#808080	gui=none
-hi TabLine	ctermfg=16	ctermbg=240	cterm=none	guifg=black	guibg=#585858	gui=none
-hi TabLineFill	ctermfg=16	ctermbg=235	cterm=none	guifg=black	guibg=#262626	gui=none
+hi StatusLine	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=none	gui=none
+hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
+hi VertSplit	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
+hi TabLineSel	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=none	gui=none
+hi TabLine	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
+hi TabLineFill	ctermfg=16	ctermbg=235	guifg=black	guibg=#262626	cterm=none	gui=none
+hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#ffff00	cterm=none	gui=none
 hi String	ctermfg=229	guifg=#ffffaf
 hi Title	cterm=bold	ctermfg=201	gui=bold	guifg=Magenta
 hi Type		ctermfg=77	guifg=#5fd75f	gui=none
