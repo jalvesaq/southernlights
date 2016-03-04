@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Sun Feb 21, 2016  05:07PM
+" Last Change: Fri Mar 04, 2016  12:18PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -99,10 +99,17 @@ hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi SignColumn	ctermfg=45	ctermbg=240	guifg=#ffff5f	guibg=#585858
 hi Special	ctermfg=221	guifg=#ffd75f
 hi SpecialKey	ctermfg=86	guifg=#00ffff
-hi SpellBad	ctermfg=196	ctermbg=none	cterm=underline	guisp=#ff0000	gui=undercurl
-hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guisp=#00AA00	gui=undercurl
-hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guisp=#ff00ff	gui=undercurl
-hi SpellCap	ctermfg=33	ctermbg=none	cterm=underline	guisp=#0087ff	gui=undercurl
+if $NVIM_TUI_ENABLE_TRUE_COLOR && !has("gui_running")
+    hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guifg=#ff0000 gui=underline
+    hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guifg=#00AA00 gui=underline
+    hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guifg=#ff00ff gui=underline
+    hi SpellCap		ctermfg=33	ctermbg=none	cterm=underline	guifg=#0087ff gui=underline
+else
+    hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guisp=#ff0000	gui=undercurl
+    hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guisp=#00AA00	gui=undercurl
+    hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guisp=#ff00ff	gui=undercurl
+    hi SpellCap		ctermfg=33	ctermbg=none	cterm=underline	guisp=#0087ff	gui=undercurl
+endif
 hi Statement	ctermfg=226	guifg=yellow	cterm=none	gui=none
 hi StatusLine	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=none	gui=none
 hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
