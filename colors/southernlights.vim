@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Mon Apr 18, 2016  07:48AM
+" Last Change: Mon Apr 18, 2016  07:53AM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -23,41 +23,41 @@ if &term =~ "xterm" || &term =~ "256" || $DISPLAY != ""
 endif
 
 if &t_Co < 256 && !has("gui_running")
-    hi String cterm=none ctermfg=white
-    hi Boolean cterm=none ctermfg=red
-    hi Special cterm=none ctermfg=darkyellow
-    hi Number cterm=none ctermfg=magenta
-    hi Comment cterm=none ctermfg=darkcyan
-    hi Function cterm=none ctermfg=cyan
-    hi PreProc cterm=none ctermfg=lightblue
-    hi Type cterm=none ctermfg=lightgreen
-    hi Pmenu	ctermfg=black	ctermbg=darkgreen
-    hi PmenuSel	ctermfg=darkblue	ctermbg=lightgreen
-    hi Character cterm=none
-    hi SpellLocal ctermfg=black ctermbg=green
+    hi String		cterm=none	ctermfg=white
+    hi Boolean		cterm=none	ctermfg=red
+    hi Special		cterm=none	ctermfg=darkyellow
+    hi Number		cterm=none	ctermfg=magenta
+    hi Comment		cterm=none	ctermfg=darkcyan
+    hi Function		cterm=none	ctermfg=cyan
+    hi PreProc		cterm=none	ctermfg=lightblue
+    hi Type		cterm=none	ctermfg=lightgreen
+    hi Pmenu		ctermfg=black	ctermbg=darkgreen
+    hi PmenuSel		ctermfg=darkblue	ctermbg=lightgreen
+    hi Character	cterm=none
+    hi SpellLocal	ctermfg=black	ctermbg=green
     hi StatusLine	cterm=none	ctermfg=cyan	ctermbg=blue
     hi StatusLineNC	cterm=none	ctermfg=gray	ctermbg=blue
     hi VertSplit	cterm=none	ctermfg=blue	ctermbg=blue
     hi TabLineSel	cterm=none	ctermfg=cyan	ctermbg=blue
     hi TabLine		cterm=none	ctermfg=gray	ctermbg=blue
     hi TabLineFill	cterm=none	ctermfg=blue	ctermbg=blue
-    hi diffFile ctermfg=cyan
+    hi diffFile		ctermfg=cyan
     hi diffAdded	ctermfg=green
     hi diffRemoved	ctermfg=darkyellow
-    hi link wdiffOld diffRemoved
-    hi link wdiffNew diffAdded
-    hi mailQuoted1 ctermfg=green
-    hi mailQuoted2 ctermfg=cyan
-    hi mailQuoted3 ctermfg=darkcyan
-    hi mailQuoted4 ctermfg=blue
-    hi mailQuoted5 ctermfg=blue
-    hi mailQuoted6 ctermfg=blue
-    hi mailSignature ctermfg=darkcyan
-    hi SignColumn ctermfg=yellow ctermbg=green
-    hi ShowMarksHLl ctermfg=yellow ctermbg=green
-    hi ShowMarksHLu ctermfg=yellow ctermbg=green
-    hi ShowMarksHLo ctermfg=yellow ctermbg=green
-    hi ShowMarksHLm ctermfg=yellow ctermbg=green
+    hi link wdiffOld	diffRemoved
+    hi link wdiffNew	diffAdded
+    hi mailQuoted1	ctermfg=green
+    hi mailQuoted2	ctermfg=cyan
+    hi mailQuoted3	ctermfg=darkcyan
+    hi mailQuoted4	ctermfg=blue
+    hi mailQuoted5	ctermfg=blue
+    hi mailQuoted6	ctermfg=blue
+    hi mailSignature	ctermfg=darkcyan
+    hi SignColumn	ctermfg=yellow	ctermbg=green
+    hi ShowMarksHLl	ctermfg=yellow	ctermbg=green
+    hi ShowMarksHLu	ctermfg=yellow	ctermbg=green
+    hi ShowMarksHLo	ctermfg=yellow	ctermbg=green
+    hi ShowMarksHLm	ctermfg=yellow	ctermbg=green
     finish
 endif
 
@@ -101,10 +101,10 @@ hi SignColumn	ctermfg=45	ctermbg=240	guifg=#ffff5f	guibg=#585858
 hi Special	ctermfg=221	guifg=#ffd75f
 hi SpecialKey	ctermfg=86	guifg=#00ffff
 if $NVIM_TUI_ENABLE_TRUE_COLOR && !has("gui_running")
-    hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guifg=#ff0000 gui=underline
-    hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guifg=#00AA00 gui=underline
-    hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guifg=#ff00ff gui=underline
-    hi SpellCap		ctermfg=33	ctermbg=none	cterm=underline	guifg=#0087ff gui=underline
+    hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guifg=#ff0000	gui=underline
+    hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guifg=#00AA00	gui=underline
+    hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guifg=#ff00ff	gui=underline
+    hi SpellCap		ctermfg=33	ctermbg=none	cterm=underline	guifg=#0087ff	gui=underline
 else
     hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guisp=#ff0000	gui=undercurl
     hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guisp=#00AA00	gui=undercurl
@@ -127,7 +127,7 @@ hi Visual	ctermfg=248	guifg=#a8a8a8	ctermbg=237 	guibg=#3a3a3a
 hi VisualNOS	term=bold,underline		cterm=bold,underline		gui=bold,underline
 hi WarningMsg	ctermfg=196
 hi WildMenu	ctermfg=16	ctermbg=226	guifg=#000000	guibg=#ffff00
-hi ErrorMsg ctermfg=231 ctermbg=196 guifg=#ffffff guibg=#ff0000
+hi ErrorMsg	ctermfg=231	ctermbg=196	guifg=#ffffff	guibg=#ff0000
 
 
 " html
