@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Fri Mar 04, 2016  12:18PM
+" Last Change: Mon Apr 18, 2016  07:48AM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -35,11 +35,12 @@ if &t_Co < 256 && !has("gui_running")
     hi PmenuSel	ctermfg=darkblue	ctermbg=lightgreen
     hi Character cterm=none
     hi SpellLocal ctermfg=black ctermbg=green
-    "hi StatusLine	cterm=none ctermfg=white	ctermbg=gray
-    "hi StatusLineNC	cterm=none ctermfg=black	ctermbg=gray
-    "hi TabLineSel	cterm=none	ctermfg=white	ctermbg=gray
-    "hi TabLine     	cterm=none	ctermfg=black	ctermbg=gray
-    "hi TabLineFill      cterm=none	ctermfg=gray	ctermbg=black
+    hi StatusLine	cterm=none	ctermfg=cyan	ctermbg=blue
+    hi StatusLineNC	cterm=none	ctermfg=gray	ctermbg=blue
+    hi VertSplit	cterm=none	ctermfg=blue	ctermbg=blue
+    hi TabLineSel	cterm=none	ctermfg=cyan	ctermbg=blue
+    hi TabLine		cterm=none	ctermfg=gray	ctermbg=blue
+    hi TabLineFill	cterm=none	ctermfg=blue	ctermbg=blue
     hi diffFile ctermfg=cyan
     hi diffAdded	ctermfg=green
     hi diffRemoved	ctermfg=darkyellow
@@ -127,10 +128,6 @@ hi VisualNOS	term=bold,underline		cterm=bold,underline		gui=bold,underline
 hi WarningMsg	ctermfg=196
 hi WildMenu	ctermfg=16	ctermbg=226	guifg=#000000	guibg=#ffff00
 hi ErrorMsg ctermfg=231 ctermbg=196 guifg=#ffffff guibg=#ff0000
-
-" TODO: Implement:
-" CursorIM
-" VisualNOS
 
 
 " html
