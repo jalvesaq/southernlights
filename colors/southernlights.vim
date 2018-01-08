@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Mon Apr 18, 2016  07:53AM
+" Last Change: Sun Jan 07, 2018  11:51PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -54,17 +54,13 @@ if &t_Co < 256 && !has("gui_running")
     hi mailQuoted6	ctermfg=blue
     hi mailSignature	ctermfg=darkcyan
     hi SignColumn	ctermfg=yellow	ctermbg=green
-    hi ShowMarksHLl	ctermfg=yellow	ctermbg=green
-    hi ShowMarksHLu	ctermfg=yellow	ctermbg=green
-    hi ShowMarksHLo	ctermfg=yellow	ctermbg=green
-    hi ShowMarksHLm	ctermfg=yellow	ctermbg=green
     finish
 endif
 
 hi Boolean	ctermfg=209	guifg=#ff875f
 hi Character	ctermfg=223	guifg=#ffd7af
 hi Comment	ctermfg=147	guifg=#afafff
-hi Constant	ctermfg=219	guifg=#ffafff
+hi Constant	ctermfg=194	guifg=#d7ffd7
 hi Conceal	ctermfg=221	ctermbg=16	guifg=#ffd75f	guibg=black
 hi Cursor	ctermfg=16	ctermbg=28	cterm=bold	guifg=Black	guibg=Green	gui=bold
 hi CursorLine	ctermbg=235	cterm=none	guibg=#262626	gui=none
@@ -79,7 +75,8 @@ hi Directory	ctermfg=33	guifg=#0087ff
 hi Folded	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
 hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
 hi Function	ctermfg=117	guifg=#87d7ff
-hi Identifier	ctermfg=86	cterm=none	guifg=cyan	gui=none
+hi Identifier	ctermfg=159	cterm=none	guifg=#afffff	gui=none
+hi Include	ctermfg=219	cterm=none	guifg=#ffafff	gui=none
 hi LineNr	ctermfg=16	ctermbg=240	guifg=Black	guibg=#585858
 hi CursorLineNr	ctermfg=16	ctermbg=243	guifg=Black	guibg=#585858
 hi MatchParen	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
@@ -97,10 +94,10 @@ hi PreProc	ctermfg=207	ctermbg=none	guifg=#ff5fff
 hi Question	ctermfg=115	guifg=#87d7af
 hi Search	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
-hi SignColumn	ctermfg=45	ctermbg=240	guifg=#ffff5f	guibg=#585858
+hi SignColumn	ctermfg=227	ctermbg=240	guifg=#ffff5f	guibg=#585858
 hi Special	ctermfg=221	guifg=#ffd75f
 hi SpecialKey	ctermfg=86	guifg=#00ffff
-if $NVIM_TUI_ENABLE_TRUE_COLOR && !has("gui_running")
+if &termguicolors && !has("gui_running")
     hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guifg=#ff0000	gui=underline
     hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guifg=#00AA00	gui=underline
     hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guifg=#ff00ff	gui=underline
