@@ -20,7 +20,7 @@ Vim color scheme
 ## Bash configuration
 
 To ensure that both Vim and Neovim will recognize the 256 colors capability of your
-terminal, even when you are acessing your system through ssh, put the
+terminal, even when you are accessing your system through ssh, put the
 following lines in your `~/.bashrc`:
 
 ```sh

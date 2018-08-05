@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Wed Jan 17, 2018  05:22PM
+" Last Change: Sat Aug 04, 2018  10:33PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -75,7 +75,7 @@ hi Directory	ctermfg=33	guifg=#0087ff
 hi Folded	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
 hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
 hi Function	ctermfg=117	guifg=#87d7ff
-hi Identifier	ctermfg=159	cterm=none	guifg=#afffff	gui=none
+hi Identifier	ctermfg=86	cterm=none	guifg=#5fffd7	gui=none
 hi Include	ctermfg=219	cterm=none	guifg=#ffafff	gui=none
 hi LineNr	ctermfg=16	ctermbg=240	guifg=Black	guibg=#585858
 hi CursorLineNr	ctermfg=16	ctermbg=243	guifg=Black	guibg=#585858
@@ -117,7 +117,7 @@ hi TabLine	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
 hi TabLineFill	ctermfg=16	ctermbg=235	guifg=black	guibg=#262626	cterm=none	gui=none
 hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#ffff00	cterm=none	gui=none
 hi String	ctermfg=229	guifg=#ffffaf
-hi Title	cterm=bold	ctermfg=201	gui=bold	guifg=Magenta
+hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
 hi Type		ctermfg=77	guifg=#5fd75f	gui=none
 hi Underlined	ctermfg=105	guifg=#8787ff	cterm=underline	gui=underline
 hi Visual	ctermfg=248	guifg=#a8a8a8	ctermbg=237 	guibg=#3a3a3a
