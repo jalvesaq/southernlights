@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Sat Aug 04, 2018  10:33PM
+" Last Change: Tue May 19, 2020  05:08PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -18,11 +18,11 @@ endif
 
 let colors_name = "southernlights"
 
-if &term =~ "xterm" || &term =~ "256" || $DISPLAY != ""
-    set t_Co=256
+if $TERM == "linux"
+    let g:southernlights_16 = get(g:, "southernlights_16", 1)
 endif
 
-if &t_Co < 256 && !has("gui_running")
+if exists('g:southernlights_16') && g:southernlights_16 == 1
     hi String		cterm=none	ctermfg=white
     hi Boolean		cterm=none	ctermfg=red
     hi Special		cterm=none	ctermfg=darkyellow
@@ -31,13 +31,13 @@ if &t_Co < 256 && !has("gui_running")
     hi Function		cterm=none	ctermfg=cyan
     hi PreProc		cterm=none	ctermfg=lightblue
     hi Type		cterm=none	ctermfg=lightgreen
-    hi Pmenu		ctermfg=black	ctermbg=darkgreen
-    hi PmenuSel		ctermfg=darkblue	ctermbg=lightgreen
+    hi Pmenu		ctermfg=black	ctermbg=darkblue
+    hi PmenuSel		ctermfg=gray	ctermbg=darkblue
     hi Character	cterm=none
     hi SpellLocal	ctermfg=black	ctermbg=green
-    hi StatusLine	cterm=none	ctermfg=cyan	ctermbg=blue
-    hi StatusLineNC	cterm=none	ctermfg=gray	ctermbg=blue
-    hi VertSplit	cterm=none	ctermfg=blue	ctermbg=blue
+    hi StatusLine	cterm=none	ctermfg=gray	ctermbg=darkblue
+    hi StatusLineNC	cterm=none	ctermfg=black	ctermbg=darkblue
+    hi VertSplit	cterm=none	ctermfg=darkblue	ctermbg=darkblue
     hi TabLineSel	cterm=none	ctermfg=cyan	ctermbg=blue
     hi TabLine		cterm=none	ctermfg=gray	ctermbg=blue
     hi TabLineFill	cterm=none	ctermfg=blue	ctermbg=blue
@@ -83,13 +83,14 @@ hi MatchParen	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi NonText	ctermfg=21	guifg=#0000ff	term=none	gui=none
 hi Number	ctermfg=223	guifg=#ffd7af
 hi Normal	ctermfg=253	ctermbg=16	guifg=#dadada	guibg=Black
+hi NormalFloat	ctermfg=253	ctermbg=237	guifg=#dadada	guibg=#3a3a3a
 hi MoreMsg	ctermfg=36	guifg=#00af87
 hi ModeMsg	ctermfg=253	guifg=#dadada
 hi Operator	ctermfg=204	guifg=#ff5f87
-hi Pmenu	ctermfg=119	ctermbg=22	guifg=#87ff5f	guibg=#005f00
-hi PmenuSel	ctermfg=226	ctermbg=28	guifg=Yellow	guibg=#008700
-hi PmenuSbar	ctermbg=244	guibg=#808080
-hi PmenuThumb	ctermbg=251	guibg=#c6c6c6
+hi Pmenu	ctermfg=249	ctermbg=235	guifg=#b2b2b2	guibg=#262626
+hi PmenuSel	ctermfg=255	ctermbg=237	guifg=#eeeeee	guibg=#3a3a3a
+hi PmenuSbar	ctermbg=240	guibg=#585858
+hi PmenuThumb	ctermbg=243	guibg=#767676
 hi PreProc	ctermfg=207	ctermbg=none	guifg=#ff5fff
 hi Question	ctermfg=115	guifg=#87d7af
 hi Search	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
@@ -111,7 +112,7 @@ endif
 hi Statement	ctermfg=226	guifg=yellow	cterm=none	gui=none
 hi StatusLine	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=none	gui=none
 hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
-hi VertSplit	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
+hi VertSplit	ctermfg=240	ctermbg=240	guifg=#585858	guibg=#585858	cterm=none	gui=none
 hi TabLineSel	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=none	gui=none
 hi TabLine	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
 hi TabLineFill	ctermfg=16	ctermbg=235	guifg=black	guibg=#262626	cterm=none	gui=none
