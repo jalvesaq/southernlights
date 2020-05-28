@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Tue May 19, 2020  05:08PM
+" Last Change: Wed May 27, 2020  09:03PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -93,6 +93,7 @@ hi PmenuSbar	ctermbg=240	guibg=#585858
 hi PmenuThumb	ctermbg=243	guibg=#767676
 hi PreProc	ctermfg=207	ctermbg=none	guifg=#ff5fff
 hi Question	ctermfg=115	guifg=#87d7af
+hi QuickFixLine	ctermfg=231	ctermbg=23	guifg=white	guibg=#005f5f
 hi Search	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi SignColumn	ctermfg=227	ctermbg=240	guifg=#ffff5f	guibg=#585858
