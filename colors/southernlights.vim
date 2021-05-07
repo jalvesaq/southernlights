@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Fri Jun 26, 2020  03:02PM
+" Last Change: Fri May 07, 2021  10:46AM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -130,6 +130,30 @@ hi WarningMsg	ctermfg=196
 hi WildMenu	ctermfg=16	ctermbg=226	guifg=#000000	guibg=#ffff00
 hi ErrorMsg	ctermfg=231	ctermbg=196	guifg=#ffffff	guibg=#ff0000
 
+" Nvim lsp
+hi LspDiagnosticsDefaultHint		ctermfg=blue   guifg=#15aacc guibg=#333333
+hi LspDiagnosticsDefaultError		ctermfg=red    guifg=#ff0000 guibg=#333333
+hi LspDiagnosticsDefaultWarning		ctermfg=brown  guifg=#ff922b guibg=#333333
+hi LspDiagnosticsDefaultInformation	ctermfg=yellow guifg=#fab005 guibg=#333333
+
+hi default link LspDiagnosticsFloatingHint         LspDiagnosticsDefaultHint
+hi default link LspDiagnosticsFloatingError        LspDiagnosticsDefaultError
+hi default link LspDiagnosticsFloatingWarning      LspDiagnosticsDefaultWarning
+hi default link LspDiagnosticsFloatingInformation  LspDiagnosticsDefaultInformation
+
+hi default link LspDiagnosticsSignHint         LspDiagnosticsDefaultHint
+hi default link LspDiagnosticsSignError        LspDiagnosticsDefaultError
+hi default link LspDiagnosticsSignWarning      LspDiagnosticsDefaultWarning
+hi default link LspDiagnosticsSignInformation  LspDiagnosticsDefaultInformation
+
+hi LspDiagnosticsUnderlineError guifg=NONE ctermfg=NONE cterm=underline gui=underline
+hi LspDiagnosticsUnderlineWarning guifg=NONE ctermfg=NONE cterm=underline gui=underline
+hi LspDiagnosticsUnderlineInformation guifg=NONE ctermfg=NONE cterm=underline gui=underline
+hi LspDiagnosticsUnderlineHint guifg=NONE ctermfg=NONE cterm=underline gui=underline
+
+hi LspReferenceRead gui=bold ctermbg=237 guibg=#004444
+hi LspReferenceText gui=bold ctermbg=237 guibg=#444400
+hi LspReferenceWrite gui=bold ctermbg=237 guibg=#440000
 
 " html
 hi htmlLink			cterm=underline	ctermfg=105	gui=underline	guifg=#8787ff
