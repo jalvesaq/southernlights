@@ -2,7 +2,7 @@
 "
 " Name:        southernlights256.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Fri May 07, 2021  10:46AM
+" Last Change: Tue May 11, 2021  08:12PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -131,10 +131,10 @@ hi WildMenu	ctermfg=16	ctermbg=226	guifg=#000000	guibg=#ffff00
 hi ErrorMsg	ctermfg=231	ctermbg=196	guifg=#ffffff	guibg=#ff0000
 
 " Nvim lsp
-hi LspDiagnosticsDefaultHint		ctermfg=blue   guifg=#15aacc guibg=#333333
-hi LspDiagnosticsDefaultError		ctermfg=red    guifg=#ff0000 guibg=#333333
-hi LspDiagnosticsDefaultWarning		ctermfg=brown  guifg=#ff922b guibg=#333333
-hi LspDiagnosticsDefaultInformation	ctermfg=yellow guifg=#fab005 guibg=#333333
+hi LspDiagnosticsDefaultHint		ctermfg=blue   guifg=#15aacc guibg=#3a3a3a
+hi LspDiagnosticsDefaultError		ctermfg=red    guifg=#ff0000 guibg=#3a3a3a
+hi LspDiagnosticsDefaultWarning		ctermfg=brown  guifg=#ff922b guibg=#3a3a3a
+hi LspDiagnosticsDefaultInformation	ctermfg=yellow guifg=#fab005 guibg=#3a3a3a
 
 hi default link LspDiagnosticsFloatingHint         LspDiagnosticsDefaultHint
 hi default link LspDiagnosticsFloatingError        LspDiagnosticsDefaultError
