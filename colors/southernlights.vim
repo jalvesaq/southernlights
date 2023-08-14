@@ -2,7 +2,7 @@
 "
 " Name:        southernlights.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Mon Aug 14, 2023  10:15AM
+" Last Change: Mon Aug 14, 2023  10:36AM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -181,3 +181,23 @@ hi CSVColumnHeaderOdd	ctermfg=46	ctermbg=236	guifg=#00ff00	guibg=#303030
 hi CSVColumnHeaderEven	ctermfg=45	ctermbg=236	guifg=#00d7ff	guibg=#303030
 hi CSVColumnOdd		ctermfg=40	guifg=#00d700
 hi CSVColumnEven	ctermfg=39	guifg=#00afff
+
+" nvim-cmp
+highlight! CmpItemAbbr guibg=NONE
+highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough
+highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch
+highlight! link CmpItemKindKeyword Keyword
+highlight! link CmpItemKindProperty Constant
+highlight! link CmpItemKindUnit Include
+highlight! link CmpItemKindFunction Function
+highlight! link CmpItemKindStruct Type
+highlight! link CmpItemKindMethod Boolean
+highlight! link CmpItemKindText String
+highlight! link CmpItemKindValue Numeric
+highlight! link CmpItemKindField Special
+highlight! link CmpItemKindConstructor Statement
+highlight! link CmpItemKindClass Type
+highlight! link CmpItemKindInterface Include
+highlight! link CmpItemKindModule PreProc
+highlight! link CmpItemKindVariable Identifier
