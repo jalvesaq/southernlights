@@ -1,8 +1,8 @@
 " Vim color scheme
 "
-" Name:        southernlights256.vim
+" Name:        southernlights.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Tue May 11, 2021  08:12PM
+" Last Change: Mon Aug 14, 2023  10:15AM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -18,50 +18,15 @@ endif
 
 let colors_name = "southernlights"
 
-if $TERM == "linux"
-    let g:southernlights_16 = get(g:, "southernlights_16", 1)
-endif
-
-if exists('g:southernlights_16') && g:southernlights_16 == 1
-    hi String		cterm=none	ctermfg=white
-    hi Boolean		cterm=none	ctermfg=red
-    hi Special		cterm=none	ctermfg=darkyellow
-    hi Number		cterm=none	ctermfg=magenta
-    hi Comment		cterm=none	ctermfg=darkcyan
-    hi Function		cterm=none	ctermfg=cyan
-    hi PreProc		cterm=none	ctermfg=lightblue
-    hi Type		cterm=none	ctermfg=lightgreen
-    hi Pmenu		ctermfg=black	ctermbg=darkblue
-    hi PmenuSel		ctermfg=gray	ctermbg=darkblue
-    hi Character	cterm=none
-    hi SpellLocal	ctermfg=black	ctermbg=green
-    hi StatusLine	cterm=none	ctermfg=gray	ctermbg=darkblue
-    hi StatusLineNC	cterm=none	ctermfg=black	ctermbg=darkblue
-    hi VertSplit	cterm=none	ctermfg=darkblue	ctermbg=darkblue
-    hi TabLineSel	cterm=none	ctermfg=cyan	ctermbg=blue
-    hi TabLine		cterm=none	ctermfg=gray	ctermbg=blue
-    hi TabLineFill	cterm=none	ctermfg=blue	ctermbg=blue
-    hi diffFile		ctermfg=cyan
-    hi diffAdded	ctermfg=green
-    hi diffRemoved	ctermfg=darkyellow
-    hi link wdiffOld	diffRemoved
-    hi link wdiffNew	diffAdded
-    hi mailQuoted1	ctermfg=green
-    hi mailQuoted2	ctermfg=cyan
-    hi mailQuoted3	ctermfg=darkcyan
-    hi mailQuoted4	ctermfg=blue
-    hi mailQuoted5	ctermfg=blue
-    hi mailQuoted6	ctermfg=blue
-    hi mailSignature	ctermfg=darkcyan
-    hi SignColumn	ctermfg=yellow	ctermbg=green
-    finish
-endif
-
 hi Boolean	ctermfg=209	guifg=#ff875f
 hi Character	ctermfg=223	guifg=#ffd7af
 hi Comment	ctermfg=147	guifg=#afafff
 hi Constant	ctermfg=194	guifg=#d7ffd7
 hi Conceal	ctermfg=221	ctermbg=16	guifg=#ffd75f	guibg=black
+hi Conditional  ctermfg=228     guifg=#ffff87
+hi Repeat       ctermfg=192     guifg=#d7ff87
+hi Label        ctermfg=191     guifg=#d7ff5f
+hi Keyword      ctermfg=229     guifg=#ffffaf
 hi Cursor	ctermfg=16	ctermbg=28	cterm=bold	guifg=Black	guibg=Green	gui=bold
 hi CursorLine	ctermbg=235	cterm=none	guibg=#262626	gui=none
 hi CursorColumn	ctermbg=235	cterm=none	guibg=#262626	gui=none
@@ -86,7 +51,7 @@ hi Normal	ctermfg=253	ctermbg=16	guifg=#dadada	guibg=Black
 hi NormalFloat	ctermfg=253	ctermbg=237	guifg=#dadada	guibg=#3a3a3a
 hi MoreMsg	ctermfg=36	guifg=#00af87
 hi ModeMsg	ctermfg=253	guifg=#dadada
-hi Operator	ctermfg=204	guifg=#ff5f87
+hi Operator	ctermfg=208	guifg=#ff8700
 hi Pmenu	ctermfg=249	ctermbg=235	guifg=#b2b2b2	guibg=#262626
 hi PmenuSel	ctermfg=255	ctermbg=237	guifg=#eeeeee	guibg=#3a3a3a
 hi PmenuSbar	ctermbg=240	guibg=#585858
@@ -99,17 +64,24 @@ hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi SignColumn	ctermfg=227	ctermbg=240	guifg=#ffff5f	guibg=#585858
 hi Special	ctermfg=221	guifg=#ffd75f
 hi SpecialKey	ctermfg=86	guifg=#00ffff
-if has("gui_running")
-    hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guisp=#ff0000	gui=undercurl
-    hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guisp=#00AA00	gui=undercurl
-    hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guisp=#ff00ff	gui=undercurl
-    hi SpellCap		ctermfg=33	ctermbg=none	cterm=underline	guisp=#0087ff	gui=undercurl
+
+if has('gui_running') || &termguicolors == 1
+    let g:TheCondition = 1
+    " Add to your ~/tmux.conf
+    " set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
+    " set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'
+    hi SpellBad		guisp=#ff0000	gui=undercurl
+    hi SpellLocal	guisp=#00ff00	gui=undercurl
+    hi SpellRare	guisp=#ff00ff	gui=undercurl
+    hi SpellCap		guisp=#00ffff	gui=undercurl
 else
+    let g:TheCondition = 0
     hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guifg=#ff0000	gui=underline
     hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guifg=#00AA00	gui=underline
     hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guifg=#ff00ff	gui=underline
     hi SpellCap		ctermfg=33	ctermbg=none	cterm=underline	guifg=#0087ff	gui=underline
 endif
+
 hi Statement	ctermfg=226	guifg=yellow	cterm=none	gui=none
 hi StatusLine	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=none	gui=none
 hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
@@ -123,7 +95,7 @@ hi String	ctermfg=229	guifg=#ffffaf
 hi Structure	ctermfg=79	guifg=#5fd7af	gui=none
 hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
 hi Type		ctermfg=77	guifg=#5fd75f	gui=none
-hi Underlined	ctermfg=105	guifg=#8787ff	cterm=underline	gui=underline
+hi Underlined	ctermfg=111	guifg=#87afff	cterm=underline	gui=underline
 hi Visual	ctermfg=248	guifg=#a8a8a8	ctermbg=237 	guibg=#3a3a3a
 hi VisualNOS	term=bold,underline		cterm=bold,underline		gui=bold,underline
 hi WarningMsg	ctermfg=196

@@ -6,34 +6,56 @@ Vim color scheme
 
    - Black background.
    - Based on other color schemes. The starting point was "torte".
-   - Uses the same 256 colors in both GVim and terminal emulators capable of
-     displaying 256 colors.
-   - Default to an 8 colors scheme if can not detect terminal capability of
-     displaying 256 colors.
+   - Uses the same 256 colors in both GVim and terminal emulators.
    - Specific rules for html, mail, diff, wdiff, vim help and showmarks
      plugin.
+
+# Usage
+
+Note: The option 'termguicolors' must be set before running the `colorscheme`
+command if you want to highlight spell check errors with undercurls.
+
+This color scheme should not be enabled if the terminal emulator does not
+support 256 colors, such as the Linux console. Hence, if you only use
+graphical terminal emulators with support for 256 colors, you may put in your
+`vimrc`:
+
+```vim
+colorscheme southernlights
+```
+
+or in your `init.lua`:
+
+```lua
+vim.cmd('colorscheme southernlights')
+```
+
+But if sometimes you use a less colorful terminal, you should run
+southernlights conditionally. Example for `vimrc`:
+
+```vim
+if $TERM != 'linux'
+    colorscheme southernlights
+endif
+```
+
+and a different and more complete example for `init.lua`:
+
+```lua
+if os.getenv('COLORTERM') == "truecolor" then
+    vim.o.mouse = 'a'
+    vim.o.termguicolors = true
+    vim.cmd('colorscheme southernlights')
+else
+    -- Avoid the letter q being printed in the Linux Console
+    vim.o.guicursor = ''
+end
+```
 
 ## Screenshot
 
 ![Screenshot](https://raw.githubusercontent.com/jalvesaq/southernlights/screenshot.png "Screenshot")
 
-## Bash configuration
-
-To ensure that both Vim and Neovim will recognize the 256 colors capability of your
-terminal, even when you are accessing your system through ssh, put the
-following lines in your `~/.bashrc`:
-
-```sh
-if [ "$TERM" = "xterm" ] || [ "$TERM" = "xterm-256color" ]
-then
-    export TERM=xterm-256color
-    export HAS_256_COLORS=yes
-fi
-if [ "$TERM" = "screen" ] && [ "$HAS_256_COLORS" = "yes" ]
-then
-    export TERM=screen-256color
-fi
-```
 
 ## Tests
 
