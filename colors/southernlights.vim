@@ -2,7 +2,7 @@
 "
 " Name:        southernlights.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Mon Aug 14, 2023  10:36AM
+" Last Change: Thu Aug 24, 2023  07:49AM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -66,7 +66,6 @@ hi Special	ctermfg=221	guifg=#ffd75f
 hi SpecialKey	ctermfg=86	guifg=#00ffff
 
 if has('gui_running') || &termguicolors == 1
-    let g:TheCondition = 1
     " Add to your ~/tmux.conf
     " set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
     " set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'
@@ -75,7 +74,6 @@ if has('gui_running') || &termguicolors == 1
     hi SpellRare	guisp=#ff00ff	gui=undercurl
     hi SpellCap		guisp=#00ffff	gui=undercurl
 else
-    let g:TheCondition = 0
     hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guifg=#ff0000	gui=underline
     hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guifg=#00AA00	gui=underline
     hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guifg=#ff00ff	gui=underline
