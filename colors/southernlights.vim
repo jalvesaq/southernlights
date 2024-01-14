@@ -2,7 +2,7 @@
 "
 " Name:        southernlights.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Thu Aug 24, 2023  07:49AM
+" Last Change: Sun Jan 14, 2024  07:48PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -26,27 +26,33 @@ hi Conceal	ctermfg=221	ctermbg=16	guifg=#ffd75f	guibg=black
 hi Conditional  ctermfg=228     guifg=#ffff87
 hi Repeat       ctermfg=192     guifg=#d7ff87
 hi Label        ctermfg=191     guifg=#d7ff5f
-hi Keyword      ctermfg=229     guifg=#ffffaf
+hi Keyword      ctermfg=193     guifg=#d7ffaf
 hi Cursor	ctermfg=16	ctermbg=28	cterm=bold	guifg=Black	guibg=Green	gui=bold
-hi CursorLine	ctermbg=235	cterm=none	guibg=#262626	gui=none
-hi CursorColumn	ctermbg=235	cterm=none	guibg=#262626	gui=none
-hi ColorColumn	ctermbg=235	cterm=none	guibg=#262626	gui=none
+hi CursorLine	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
+hi CursorColumn	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
+hi ColorColumn	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
 hi DiffAdd	ctermfg=227	ctermbg=22	guifg=#ffff5f	guibg=#005f00
 hi DiffDelete	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000
 hi DiffChange	ctermfg=227	ctermbg=58	guifg=#ffff5f	guibg=#5f5f00
-hi DiffText	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000	cterm=none	gui=none
-hi Error	ctermfg=231	cterm=none	ctermbg=196	gui=none	guifg=White	guibg=Red
+hi DiffText	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000	cterm=NONE	gui=NONE
+hi Emphasis	gui=italic
+hi Strong	gui=bold
+hi Exception	gui=NONE guifg=#eecc00
+hi Error	ctermfg=231	cterm=NONE	ctermbg=196	gui=NONE	guifg=White	guibg=Red
 hi Directory	ctermfg=33	guifg=#0087ff
 hi Folded	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
 hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
 hi Function	ctermfg=117	guifg=#87d7ff
-hi Identifier	ctermfg=86	cterm=none	guifg=#5fffd7	gui=none
-hi Include	ctermfg=219	cterm=none	guifg=#ffafff	gui=none
+hi Method	guifg=#87d7ff gui=italic
+hi Identifier	ctermfg=86	cterm=NONE	guifg=#5fffd7	gui=NONE
+hi Ignore       ctermfg=242     cterm=NONE      guifg=#6c6c6c   gui=NONE
+hi Include	ctermfg=219	cterm=NONE	guifg=#ffafff	gui=NONE
 hi LineNr	ctermfg=16	ctermbg=240	guifg=Black	guibg=#585858
 hi CursorLineNr	ctermfg=16	ctermbg=243	guifg=Black	guibg=#585858
 hi MatchParen	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
-hi NonText	ctermfg=21	guifg=#0000ff	term=none	gui=none
+hi NonText	ctermfg=21	guifg=#0000ff	term=NONE	gui=NONE
 hi Number	ctermfg=223	guifg=#ffd7af
+hi link Float Number
 hi Normal	ctermfg=253	ctermbg=16	guifg=#dadada	guibg=Black
 hi NormalFloat	ctermfg=253	ctermbg=237	guifg=#dadada	guibg=#3a3a3a
 hi MoreMsg	ctermfg=36	guifg=#00af87
@@ -56,13 +62,15 @@ hi Pmenu	ctermfg=249	ctermbg=235	guifg=#b2b2b2	guibg=#262626
 hi PmenuSel	ctermfg=255	ctermbg=237	guifg=#eeeeee	guibg=#3a3a3a
 hi PmenuSbar	ctermbg=240	guibg=#585858
 hi PmenuThumb	ctermbg=243	guibg=#767676
-hi PreProc	ctermfg=207	ctermbg=none	guifg=#ff5fff
+hi PreProc	ctermfg=207	ctermbg=NONE	guifg=#ff5fff
 hi Question	ctermfg=115	guifg=#87d7af
 hi QuickFixLine	ctermfg=231	ctermbg=23	guifg=white	guibg=#005f5f
+hi Quote	guifg=#ffffc0
 hi Search	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
 hi SignColumn	ctermfg=227	ctermbg=240	guifg=#ffff5f	guibg=#585858
 hi Special	ctermfg=221	guifg=#ffd75f
+hi link Delimiter Special
 hi SpecialKey	ctermfg=86	guifg=#00ffff
 
 if has('gui_running') || &termguicolors == 1
@@ -74,56 +82,31 @@ if has('gui_running') || &termguicolors == 1
     hi SpellRare	guisp=#ff00ff	gui=undercurl
     hi SpellCap		guisp=#00ffff	gui=undercurl
 else
-    hi SpellBad		ctermfg=196	ctermbg=none	cterm=underline	guifg=#ff0000	gui=underline
-    hi SpellLocal	ctermfg=28	ctermbg=none	cterm=underline	guifg=#00AA00	gui=underline
-    hi SpellRare	ctermfg=201	ctermbg=none	cterm=underline	guifg=#ff00ff	gui=underline
-    hi SpellCap		ctermfg=33	ctermbg=none	cterm=underline	guifg=#0087ff	gui=underline
+    hi SpellBad		ctermfg=196	ctermbg=NONE	cterm=underline	guifg=#ff0000	gui=underline
+    hi SpellLocal	ctermfg=28	ctermbg=NONE	cterm=underline	guifg=#00AA00	gui=underline
+    hi SpellRare	ctermfg=201	ctermbg=NONE	cterm=underline	guifg=#ff00ff	gui=underline
+    hi SpellCap		ctermfg=33	ctermbg=NONE	cterm=underline	guifg=#0087ff	gui=underline
 endif
 
-hi Statement	ctermfg=226	guifg=yellow	cterm=none	gui=none
-hi StatusLine	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=none	gui=none
-hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
-hi VertSplit	ctermfg=240	ctermbg=240	guifg=#585858	guibg=#585858	cterm=none	gui=none
-hi TabLineSel	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=none	gui=none
-hi TabLine	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=none	gui=none
-hi TabLineFill	ctermfg=16	ctermbg=235	guifg=black	guibg=#262626	cterm=none	gui=none
-hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#ffff00	cterm=none	gui=none
-hi StorageClass	ctermfg=113	guifg=#87d75f	gui=none
+hi Statement	ctermfg=226	guifg=yellow	cterm=NONE	gui=NONE
+hi StatusLine	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=NONE	gui=NONE
+hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=NONE	gui=NONE
+hi VertSplit	ctermfg=240	ctermbg=240	guifg=#585858	guibg=#585858	cterm=NONE	gui=NONE
+hi TabLineSel	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=NONE	gui=NONE
+hi TabLine	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=NONE	gui=NONE
+hi TabLineFill	ctermfg=16	ctermbg=235	guifg=black	guibg=#262626	cterm=NONE	gui=NONE
+hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#ffff00	cterm=NONE	gui=NONE
+hi StorageClass	ctermfg=113	guifg=#87d75f	gui=NONE
 hi String	ctermfg=229	guifg=#ffffaf
-hi Structure	ctermfg=79	guifg=#5fd7af	gui=none
+hi Structure	ctermfg=79	guifg=#5fd7af	gui=NONE
 hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
-hi Type		ctermfg=77	guifg=#5fd75f	gui=none
+hi Type		ctermfg=77	guifg=#5fd75f	gui=NONE
 hi Underlined	ctermfg=111	guifg=#87afff	cterm=underline	gui=underline
 hi Visual	ctermfg=248	guifg=#a8a8a8	ctermbg=237 	guibg=#3a3a3a
 hi VisualNOS	term=bold,underline		cterm=bold,underline		gui=bold,underline
-hi WarningMsg	ctermfg=196
+hi WarningMsg	ctermfg=196	cterm=NONE	gui=NONE	guifg=#ff0000
 hi WildMenu	ctermfg=16	ctermbg=226	guifg=#000000	guibg=#ffff00
 hi ErrorMsg	ctermfg=231	ctermbg=196	guifg=#ffffff	guibg=#ff0000
-
-" Nvim lsp
-hi LspDiagnosticsDefaultHint		ctermfg=blue   guifg=#15aacc guibg=#3a3a3a
-hi LspDiagnosticsDefaultError		ctermfg=red    guifg=#ff0000 guibg=#3a3a3a
-hi LspDiagnosticsDefaultWarning		ctermfg=brown  guifg=#ff922b guibg=#3a3a3a
-hi LspDiagnosticsDefaultInformation	ctermfg=yellow guifg=#fab005 guibg=#3a3a3a
-
-hi default link LspDiagnosticsFloatingHint         LspDiagnosticsDefaultHint
-hi default link LspDiagnosticsFloatingError        LspDiagnosticsDefaultError
-hi default link LspDiagnosticsFloatingWarning      LspDiagnosticsDefaultWarning
-hi default link LspDiagnosticsFloatingInformation  LspDiagnosticsDefaultInformation
-
-hi default link LspDiagnosticsSignHint         LspDiagnosticsDefaultHint
-hi default link LspDiagnosticsSignError        LspDiagnosticsDefaultError
-hi default link LspDiagnosticsSignWarning      LspDiagnosticsDefaultWarning
-hi default link LspDiagnosticsSignInformation  LspDiagnosticsDefaultInformation
-
-hi LspDiagnosticsUnderlineError guifg=NONE ctermfg=NONE cterm=underline gui=underline
-hi LspDiagnosticsUnderlineWarning guifg=NONE ctermfg=NONE cterm=underline gui=underline
-hi LspDiagnosticsUnderlineInformation guifg=NONE ctermfg=NONE cterm=underline gui=underline
-hi LspDiagnosticsUnderlineHint guifg=NONE ctermfg=NONE cterm=underline gui=underline
-
-hi LspReferenceRead gui=bold ctermbg=237 guibg=#004444
-hi LspReferenceText gui=bold ctermbg=237 guibg=#444400
-hi LspReferenceWrite gui=bold ctermbg=237 guibg=#440000
 
 " html
 hi htmlLink			cterm=underline	ctermfg=105	gui=underline	guifg=#8787ff
@@ -180,6 +163,218 @@ hi CSVColumnHeaderEven	ctermfg=45	ctermbg=236	guifg=#00d7ff	guibg=#303030
 hi CSVColumnOdd		ctermfg=40	guifg=#00d700
 hi CSVColumnEven	ctermfg=39	guifg=#00afff
 
+if has('nvim')
+    " Nvim LSP
+    hi LspDiagnosticsDefaultHint		ctermfg=blue   guifg=#15aacc guibg=#3a3a3a
+    hi LspDiagnosticsDefaultError		ctermfg=red    guifg=#ff0000 guibg=#3a3a3a
+    hi LspDiagnosticsDefaultWarning		ctermfg=brown  guifg=#ff922b guibg=#3a3a3a
+    hi LspDiagnosticsDefaultInformation	ctermfg=yellow guifg=#fab005 guibg=#3a3a3a
+
+    hi default link LspDiagnosticsFloatingHint         LspDiagnosticsDefaultHint
+    hi default link LspDiagnosticsFloatingError        LspDiagnosticsDefaultError
+    hi default link LspDiagnosticsFloatingWarning      LspDiagnosticsDefaultWarning
+    hi default link LspDiagnosticsFloatingInformation  LspDiagnosticsDefaultInformation
+
+    hi default link LspDiagnosticsSignHint         LspDiagnosticsDefaultHint
+    hi default link LspDiagnosticsSignError        LspDiagnosticsDefaultError
+    hi default link LspDiagnosticsSignWarning      LspDiagnosticsDefaultWarning
+    hi default link LspDiagnosticsSignInformation  LspDiagnosticsDefaultInformation
+
+    hi LspDiagnosticsUnderlineError guifg=NONE ctermfg=NONE cterm=underline gui=underline
+    hi LspDiagnosticsUnderlineWarning guifg=NONE ctermfg=NONE cterm=underline gui=underline
+    hi LspDiagnosticsUnderlineInformation guifg=NONE ctermfg=NONE cterm=underline gui=underline
+    hi LspDiagnosticsUnderlineHint guifg=NONE ctermfg=NONE cterm=underline gui=underline
+
+    hi LspReferenceRead gui=bold ctermbg=237 guibg=#004444
+    hi LspReferenceText gui=bold ctermbg=237 guibg=#444400
+    hi LspReferenceWrite gui=bold ctermbg=237 guibg=#440000
+
+    " Treesitter
+    hi link TSAnnotation LspDiagnosticsDefaultHint
+    hi link TSAttribute Label
+    hi link TSBoolean Boolean
+    hi link TSCharacter Character
+    hi link TSCharacterSpecial Special
+    hi link TSComment Comment
+    hi link TSConditional Conditional
+    hi link TSConstBuiltin Constant
+    hi link TSConstMacro PreProc
+    hi link TSConstant Constant
+    hi link TSConstructor StorageClass
+    hi link TSDebug PreProc
+    hi link TSDefine PreProc
+    hi link TSEmphasis Emphasis
+    hi link TSEnvironment Include
+    hi link TSEnvironmentName Include
+    hi link TSError Error
+    hi link TSException Exception
+    hi link TSField Identifier
+    hi link TSFloat Float
+    hi link TSFuncBuiltin Function
+    hi link TSFuncMacro PreProc
+    hi link TSFunction Function
+    hi link TSFunctionCall Function
+    hi link TSInclude Include
+    hi link TSKeyword Keyword
+    hi link TSKeywordFunction Function
+    hi link TSKeywordOperator Operator
+    hi link TSKeywordReturn Include
+    hi link TSLabel Label
+    hi link TSLiteral Constant
+    hi link TSMath Special
+    hi link TSMethod Method
+    hi link TSMethodCall Method
+    hi link TSNamespace Include
+    hi link TSNone None
+    hi link TSNumber Number
+    hi link TSOperator Operator
+    hi link TSParameter Identifier
+    hi link TSParameterReference Identifier
+    hi link TSPreProc PreProc
+    hi link TSProperty Identifier
+    hi link TSPunctBracket Special
+    hi link TSPunctDelimiter Delimiter
+    hi link TSPunctSpecial Special
+    hi link TSRepeat Repeat
+    hi link TSStorageClass StorageClass
+    hi link TSStorageClassLifetime StorageClass
+    hi link TSStrike Comment
+    hi link TSString String
+    hi link TSStringEscape Special
+    hi link TSStringRegex Special
+    hi link TSStringSpecial Special
+    hi link TSStrong Strong
+    hi link TSSymbol Special
+    hi link TSTag Label
+    hi link TSTagAttribute Label
+    hi link TSTagDelimiter Delimiter
+    hi link TSText Normal
+    hi link TSTextReference Identifier
+    hi link TSTitle Title
+    hi link TSTodo Todo
+    hi link TSType Type
+    hi link TSTypeBuiltin Type
+    hi link TSTypeDefinition Type
+    hi link TSTypeQualifier Type
+    hi link TSURI htmlLink
+    hi link TSVariable Identifier
+    hi link TSVariableBuiltin Type
+
+    " lukas-reineke/headlines.nvim
+    " Background color of code blocks in Quarto documents
+    hi CodeBlock guibg=#202020
+
+    hi link @annotation TSAnnotation
+    hi link @attribute TSAttribute
+    hi link @boolean TSBoolean
+    hi link @character TSCharacter
+    hi link @character.special TSCharacterSpecial
+    hi link @comment TSComment
+    hi link @conceal Conceal
+    hi link @conditional TSConditional
+    hi link @constant TSConstant
+    hi link @constant.builtin TSConstBuiltin
+    hi link @constant.macro TSConstMacro
+    hi link @constructor TSConstructor
+    hi link @debug TSDebug
+    hi link @define TSDefine
+    hi link @error TSError
+    hi link @exception TSException
+    hi link @field TSField
+    hi link @float TSFloat
+    hi link @function TSFunction
+    hi link @function.builtin TSFuncBuiltin
+    hi link @function.call TSFunctionCall
+    hi link @function.macro TSFuncMacro
+    hi link @include TSInclude
+    hi link @keyword TSKeyword
+    hi link @keyword.function TSKeywordFunction
+    hi link @keyword.operator TSKeywordOperator
+    hi link @keyword.return TSKeywordReturn
+    hi link @label TSLabel
+    hi link @math TSMath
+    hi link @method TSMethod
+    hi link @method.call TSMethodCall
+    hi link @namespace TSNamespace
+    hi link @none TSNone
+    hi link @number TSNumber
+    hi link @operator TSOperator
+    hi link @parameter TSParameter
+    hi link @parameter.reference TSParameterReference
+    hi link @preproc TSPreProc
+    hi link @property TSProperty
+    hi link @punctuation.bracket TSPunctBracket
+    hi link @punctuation.delimiter TSPunctDelimiter
+    hi link @punctuation.special TSPunctSpecial
+    hi link @repeat TSRepeat
+    hi link @storageclass TSStorageClass
+    hi link @storageclass.lifetime TSStorageClassLifetime
+    hi link @strike TSStrike
+    hi link @string TSString
+    hi link @string.escape TSStringEscape
+    hi link @string.regex TSStringRegex
+    hi link @string.special TSStringSpecial
+    hi link @symbol TSSymbol
+    hi link @tag TSTag
+    hi link @tag.attribute TSTagAttribute
+    hi link @tag.delimiter TSTagDelimiter
+    hi link @text TSText
+    hi link @text.danger TSDanger
+    hi link @text.diff.add diffAdded
+    hi link @text.diff.delete diffRemoved
+    hi link @text.emphasis TSEmphasis
+    hi link @text.environment TSEnvironment
+    hi link @text.environment.name TSEnvironmentName
+    hi link @text.literal TSLiteral
+    hi link @text.math TSMath
+    hi link @text.note TSNote
+    hi link @text.quote Quote
+    hi link @text.reference TSTextReference
+    hi link @text.strike TSStrike
+    hi link @text.strong TSStrong
+    hi link @text.title TSTitle
+    hi link @text.todo TSTodo
+    hi link @text.todo.checked Green
+    hi link @text.todo.unchecked Ignore
+    hi link @text.underline TSUnderline
+    hi link @text.uri TSURI
+    hi link @text.warning TSWarning
+    hi link @todo TSTodo
+    hi link @type TSType
+    hi link @type.builtin TSTypeBuiltin
+    hi link @type.definition TSTypeDefinition
+    hi link @type.qualifier TSTypeQualifier
+    hi link @uri TSURI
+    hi link @variable TSVariable
+    hi link @variable.builtin TSVariableBuiltin
+    hi link @lsp.type.class TSType
+    hi link @lsp.type.comment TSComment
+    hi link @lsp.type.decorator TSFunction
+    hi link @lsp.type.enum TSType
+    hi link @lsp.type.enumMember TSProperty
+    hi link @lsp.type.events TSLabel
+    hi link @lsp.type.function TSFunction
+    hi link @lsp.type.interface TSType
+    hi link @lsp.type.keyword TSKeyword
+    hi link @lsp.type.macro TSConstMacro
+    hi link @lsp.type.method TSMethod
+    hi link @lsp.type.modifier TSTypeQualifier
+    hi link @lsp.type.namespace TSNamespace
+    hi link @lsp.type.number TSNumber
+    hi link @lsp.type.operator TSOperator
+    hi link @lsp.type.parameter TSParameter
+    hi link @lsp.type.property TSProperty
+    hi link @lsp.type.regexp TSStringRegex
+    hi link @lsp.type.string TSString
+    hi link @lsp.type.struct TSType
+    hi link @lsp.type.type TSType
+    hi link @lsp.type.typeParameter TSTypeDefinition
+    hi link @lsp.type.variable TSVariable
+
+    " clangd highlights code disabled by #ifdef/#ifndef directives
+    hi link @lsp.type.comment.c Ignore
+endif
+
 " nvim-cmp
 highlight! CmpItemAbbr guibg=NONE
 highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough
@@ -190,7 +385,7 @@ highlight! link CmpItemKindProperty Constant
 highlight! link CmpItemKindUnit Include
 highlight! link CmpItemKindFunction Function
 highlight! link CmpItemKindStruct Type
-highlight! link CmpItemKindMethod Boolean
+highlight! link CmpItemKindMethod Method
 highlight! link CmpItemKindText String
 highlight! link CmpItemKindValue Numeric
 highlight! link CmpItemKindField Special
