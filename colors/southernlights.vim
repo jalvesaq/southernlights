@@ -2,7 +2,7 @@
 "
 " Name:        southernlights.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Sun Jan 14, 2024  07:48PM
+" Last Change: Sun Jan 14, 2024  08:32PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
@@ -73,7 +73,7 @@ hi Special	ctermfg=221	guifg=#ffd75f
 hi link Delimiter Special
 hi SpecialKey	ctermfg=86	guifg=#00ffff
 
-if has('gui_running') || &termguicolors == 1
+if has('nvim') || has('gui_running')
     " Add to your ~/tmux.conf
     " set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
     " set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'

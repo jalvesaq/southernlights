@@ -6,14 +6,10 @@ Vim color scheme
 
    - Black background.
    - Based on other color schemes. The starting point was "torte".
-   - Uses the same 256 colors in both GVim and terminal emulators.
-   - Specific rules for html, mail, diff, wdiff, vim help and showmarks
-     plugin.
+   - Mostly, uses the same 256 colors in both GVim and terminal emulators.
+   - Specific rules for TreeSitter, LSP, html, mail, diff, wdiff, vim help and showmarks plugin.
 
 # Usage
-
-Note: The option 'termguicolors' must be set before running the `colorscheme`
-command if you want to highlight spell check errors with undercurls.
 
 This color scheme should not be enabled if the terminal emulator does not
 support 256 colors, such as the Linux console. Hence, if you only use
@@ -27,7 +23,7 @@ colorscheme southernlights
 or in your `init.lua`:
 
 ```lua
-vim.cmd('colorscheme southernlights')
+vim.cmd.colorscheme('southernlights')
 ```
 
 But if sometimes you use a less colorful terminal, you should run
@@ -44,7 +40,6 @@ and a different and more complete example for `init.lua`:
 ```lua
 if os.getenv('COLORTERM') == "truecolor" then
     vim.o.mouse = 'a'
-    vim.o.termguicolors = true
     vim.cmd('colorscheme southernlights')
 else
     -- Avoid the letter q being printed in the Linux Console
@@ -54,7 +49,7 @@ end
 
 ## Screenshot
 
-![Screenshot](https://raw.githubusercontent.com/jalvesaq/southernlights/screenshot.png "Screenshot")
+![Screenshot](https://raw.githubusercontent.com/jalvesaq/southernlights/master/screenshot.png "Screenshot")
 
 
 ## Tests
