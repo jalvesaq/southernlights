@@ -2,32 +2,39 @@
 "
 " Name:        southernlights.vim
 " Maintainer:  Jakson Aquino
-" Last Change: Sun Jan 14, 2024  08:32PM
+" Last Change: Thu Sep 11, 2025  01:41PM
 " License:     GNU/GPL
 "
 " Based on other color schemes. The starting point was 'torte'
 
-
-set background=dark
+if &t_Co < 256 || $TERM == "linux"
+    finish
+endif
 
 hi clear
-
 if exists("syntax_on")
   syntax reset
 endif
 
+
 let colors_name = "southernlights"
+
+set background=dark
+
+" Normal must be defined first
+hi Normal	ctermfg=253	ctermbg=16	guifg=#dadada	guibg=#000000
+hi NormalFloat	ctermfg=253	ctermbg=237	guifg=#dadada	guibg=#3a3a3a
 
 hi Boolean	ctermfg=209	guifg=#ff875f
 hi Character	ctermfg=223	guifg=#ffd7af
 hi Comment	ctermfg=147	guifg=#afafff
 hi Constant	ctermfg=194	guifg=#d7ffd7
-hi Conceal	ctermfg=221	ctermbg=16	guifg=#ffd75f	guibg=black
+hi Conceal	ctermfg=221	ctermbg=16	guifg=#ffd75f	guibg=#000000
 hi Conditional  ctermfg=228     guifg=#ffff87
 hi Repeat       ctermfg=192     guifg=#d7ff87
 hi Label        ctermfg=191     guifg=#d7ff5f
 hi Keyword      ctermfg=193     guifg=#d7ffaf
-hi Cursor	ctermfg=16	ctermbg=28	cterm=bold	guifg=Black	guibg=Green	gui=bold
+hi Cursor	ctermfg=16	ctermbg=28	cterm=bold	guifg=#000000	guibg=#00ff00	gui=bold
 hi CursorLine	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
 hi CursorColumn	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
 hi ColorColumn	ctermbg=235	cterm=NONE	guibg=#262626	gui=NONE
@@ -35,26 +42,26 @@ hi DiffAdd	ctermfg=227	ctermbg=22	guifg=#ffff5f	guibg=#005f00
 hi DiffDelete	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000
 hi DiffChange	ctermfg=227	ctermbg=58	guifg=#ffff5f	guibg=#5f5f00
 hi DiffText	ctermfg=227	ctermbg=88	guifg=#ffff5f	guibg=#870000	cterm=NONE	gui=NONE
+hi EndOfBuffer  ctermfg=19	guifg=#0000af
 hi Emphasis	gui=italic
 hi Strong	gui=bold
 hi Exception	gui=NONE guifg=#eecc00
-hi Error	ctermfg=231	cterm=NONE	ctermbg=196	gui=NONE	guifg=White	guibg=Red
-hi Directory	ctermfg=33	guifg=#0087ff
+hi Error	ctermfg=231	cterm=NONE	ctermbg=196	gui=NONE	guifg=#ffffff	guibg=#ff0000
+hi Directory	ctermfg=39	guifg=#00afff
 hi Folded	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
 hi FoldColumn	ctermfg=86	ctermbg=240	guifg=#00ffff	guibg=#585858
 hi Function	ctermfg=117	guifg=#87d7ff
 hi Method	guifg=#87d7ff gui=italic
 hi Identifier	ctermfg=86	cterm=NONE	guifg=#5fffd7	gui=NONE
+hi Variable	ctermfg=86	cterm=NONE	guifg=#bffce8	gui=NONE
 hi Ignore       ctermfg=242     cterm=NONE      guifg=#6c6c6c   gui=NONE
 hi Include	ctermfg=219	cterm=NONE	guifg=#ffafff	gui=NONE
-hi LineNr	ctermfg=16	ctermbg=240	guifg=Black	guibg=#585858
-hi CursorLineNr	ctermfg=16	ctermbg=243	guifg=Black	guibg=#585858
-hi MatchParen	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
+hi LineNr	ctermfg=16	ctermbg=240	guifg=#000000	guibg=#585858
+hi CursorLineNr	ctermfg=16	ctermbg=243	guifg=#000000	guibg=#585858
+hi MatchParen	ctermfg=231	ctermbg=58	guifg=#ffffff	guibg=#5f5f00
 hi NonText	ctermfg=21	guifg=#0000ff	term=NONE	gui=NONE
 hi Number	ctermfg=223	guifg=#ffd7af
 hi link Float Number
-hi Normal	ctermfg=253	ctermbg=16	guifg=#dadada	guibg=Black
-hi NormalFloat	ctermfg=253	ctermbg=237	guifg=#dadada	guibg=#3a3a3a
 hi MoreMsg	ctermfg=36	guifg=#00af87
 hi ModeMsg	ctermfg=253	guifg=#dadada
 hi Operator	ctermfg=208	guifg=#ff8700
@@ -64,13 +71,13 @@ hi PmenuSbar	ctermbg=240	guibg=#585858
 hi PmenuThumb	ctermbg=243	guibg=#767676
 hi PreProc	ctermfg=207	ctermbg=NONE	guifg=#ff5fff
 hi Question	ctermfg=115	guifg=#87d7af
-hi QuickFixLine	ctermfg=231	ctermbg=23	guifg=white	guibg=#005f5f
+hi QuickFixLine	ctermfg=231	ctermbg=23	guifg=#ffffff	guibg=#005f5f
 hi Quote	guifg=#ffffc0
-hi Search	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
-hi IncSearch	ctermfg=231	ctermbg=58	guifg=white	guibg=#5f5f00
+hi Search	ctermfg=231	ctermbg=58	guifg=#ffffff	guibg=#5f5f00
+hi IncSearch	ctermfg=231	ctermbg=58	guifg=#ffffff	guibg=#5f5f00
 hi SignColumn	ctermfg=227	ctermbg=240	guifg=#ffff5f	guibg=#585858
 hi Special	ctermfg=221	guifg=#ffd75f
-hi link Delimiter Special
+hi Delimiter	ctermfg=221	guifg=#ffd75f
 hi SpecialKey	ctermfg=86	guifg=#00ffff
 
 if has('nvim') || has('gui_running')
@@ -88,19 +95,28 @@ else
     hi SpellCap		ctermfg=33	ctermbg=NONE	cterm=underline	guifg=#0087ff	gui=underline
 endif
 
-hi Statement	ctermfg=226	guifg=yellow	cterm=NONE	gui=NONE
-hi StatusLine	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=NONE	gui=NONE
-hi StatusLineNC	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=NONE	gui=NONE
+hi Statement		ctermfg=226	guifg=#ffff00	cterm=NONE	gui=NONE
+hi StatusLine		ctermfg=16	ctermbg=239	guifg=#000000	guibg=#4e4e4e	cterm=NONE	gui=NONE
+hi StatusLineTerm	ctermfg=16	ctermbg=239	guifg=#000000	guibg=#4e4e4e	cterm=NONE	gui=NONE
+hi StatusLineNC		ctermfg=16	ctermbg=240	guifg=#000000	guibg=#585858	cterm=NONE	gui=NONE
+hi StatusLineTermNC	ctermfg=16	ctermbg=240	guifg=#000000	guibg=#585858	cterm=NONE	gui=NONE
+
 hi VertSplit	ctermfg=240	ctermbg=240	guifg=#585858	guibg=#585858	cterm=NONE	gui=NONE
-hi TabLineSel	ctermfg=16	ctermbg=244	guifg=black	guibg=#808080	cterm=NONE	gui=NONE
-hi TabLine	ctermfg=16	ctermbg=240	guifg=black	guibg=#585858	cterm=NONE	gui=NONE
-hi TabLineFill	ctermfg=16	ctermbg=235	guifg=black	guibg=#262626	cterm=NONE	gui=NONE
-hi Todo		ctermfg=16	ctermbg=226	guifg=black	guibg=#ffff00	cterm=NONE	gui=NONE
+hi WinSeparator	ctermfg=240	ctermbg=16	guifg=#585858	guibg=#000000	cterm=NONE	gui=NONE
+hi TabLineSel	ctermfg=16	ctermbg=244	guifg=#000000	guibg=#808080	cterm=NONE	gui=NONE
+hi TabLine	ctermfg=16	ctermbg=240	guifg=#000000	guibg=#585858	cterm=NONE	gui=NONE
+hi TabLineFill	ctermfg=16	ctermbg=235	guifg=#000000	guibg=#262626	cterm=NONE	gui=NONE
+hi Todo		ctermfg=16	ctermbg=226	guifg=#000000	guibg=#ffff00	cterm=NONE	gui=NONE
 hi StorageClass	ctermfg=113	guifg=#87d75f	gui=NONE
 hi String	ctermfg=229	guifg=#ffffaf
 hi Structure	ctermfg=79	guifg=#5fd7af	gui=NONE
 hi Title	cterm=bold	ctermfg=45	gui=bold	guifg=#00d7ff
+hi Title2	ctermfg=45	guifg=#00d7ff
+hi Title3	ctermfg=45	guifg=#00b7df
+hi Title4	ctermfg=45	guifg=#0097bf
 hi Type		ctermfg=77	guifg=#5fd75f	gui=NONE
+" hi Typedef	ctermfg=80	guifg=#5fd7d7	gui=NONE
+hi Typedef	ctermfg=115	guifg=#87d7af	gui=NONE
 hi Underlined	ctermfg=111	guifg=#87afff	cterm=underline	gui=underline
 hi Visual	ctermfg=248	guifg=#a8a8a8	ctermbg=237 	guibg=#3a3a3a
 hi VisualNOS	term=bold,underline		cterm=bold,underline		gui=bold,underline
@@ -109,7 +125,7 @@ hi WildMenu	ctermfg=16	ctermbg=226	guifg=#000000	guibg=#ffff00
 hi ErrorMsg	ctermfg=231	ctermbg=196	guifg=#ffffff	guibg=#ff0000
 
 " html
-hi htmlLink			cterm=underline	ctermfg=105	gui=underline	guifg=#8787ff
+hi htmlLink			cterm=underline	ctermfg=105	gui=NONE	guifg=#97b7ff
 hi htmlBold			cterm=bold			gui=bold
 hi htmlBoldItalic		cterm=bold,italic		gui=bold,italic
 hi htmlBoldUnderline		cterm=bold,underline		gui=bold,underline
@@ -120,7 +136,7 @@ hi htmlUnderlineItalic		cterm=underline,italic		gui=underline,italic
 
 " mail
 hi mailHeader	ctermfg=229	guifg=#ffffaf
-hi mailSubject	ctermfg=226	guifg=yellow
+hi mailSubject	ctermfg=226	guifg=#ffff00
 hi mailQuoted1	ctermfg=48	guifg=#00ff87
 hi mailQuoted2	ctermfg=51	guifg=#00ffff
 hi mailQuoted3	ctermfg=39	guifg=#00afff
@@ -135,7 +151,7 @@ hi diffRemoved	ctermfg=210	guifg=#ff8787
 hi diffFile	ctermfg=117	guifg=#87d7ff
 hi diffOldFile	ctermfg=117	guifg=#87d7ff
 hi diffNewFile	ctermfg=117	guifg=#87d7ff
-hi diffLine	ctermfg=226	guifg=yellow
+hi diffLine	ctermfg=226	guifg=#ffff00
 
 " wdiff
 hi link	wdiffOld	diffRemoved
@@ -196,6 +212,7 @@ if has('nvim')
     hi link TSCharacter Character
     hi link TSCharacterSpecial Special
     hi link TSComment Comment
+    hi link TSCommentDocumentation Special
     hi link TSConditional Conditional
     hi link TSConstBuiltin Constant
     hi link TSConstMacro PreProc
@@ -257,7 +274,7 @@ if has('nvim')
     hi link TSTypeDefinition Type
     hi link TSTypeQualifier Type
     hi link TSURI htmlLink
-    hi link TSVariable Identifier
+    hi link TSVariable Variable
     hi link TSVariableBuiltin Type
 
     " lukas-reineke/headlines.nvim
@@ -270,6 +287,7 @@ if has('nvim')
     hi link @character TSCharacter
     hi link @character.special TSCharacterSpecial
     hi link @comment TSComment
+    hi link @comment.documentation TSCommentDocumentation
     hi link @conceal Conceal
     hi link @conditional TSConditional
     hi link @constant TSConstant
@@ -278,6 +296,7 @@ if has('nvim')
     hi link @constructor TSConstructor
     hi link @debug TSDebug
     hi link @define TSDefine
+    hi link @delimiter Delimiter
     hi link @error TSError
     hi link @exception TSException
     hi link @field TSField
@@ -292,6 +311,12 @@ if has('nvim')
     hi link @keyword.operator TSKeywordOperator
     hi link @keyword.return TSKeywordReturn
     hi link @label TSLabel
+    hi link @markup.heading.1.markdown Title
+    hi link @markup.heading.2.markdown Title2
+    hi link @markup.heading.3.markdown Title3
+    hi link @markup.heading.4.markdown Title4
+    hi link @markup.heading.5.markdown Title4
+    hi link @markup.heading.6.markdown Title4
     hi link @math TSMath
     hi link @method TSMethod
     hi link @method.call TSMethodCall
@@ -373,6 +398,12 @@ if has('nvim')
 
     " clangd highlights code disabled by #ifdef/#ifndef directives
     hi link @lsp.type.comment.c Ignore
+
+    " Avoid strong color for quotations
+    hi link @markup.quote.markdown Quote
+
+    " Avoid underline in links
+    hi link @markup.link.label.markdown_inline htmlLink
 endif
 
 " nvim-cmp
@@ -393,4 +424,4 @@ highlight! link CmpItemKindConstructor Statement
 highlight! link CmpItemKindClass Type
 highlight! link CmpItemKindInterface Include
 highlight! link CmpItemKindModule PreProc
-highlight! link CmpItemKindVariable Identifier
+highlight! link CmpItemKindVariable Variable
