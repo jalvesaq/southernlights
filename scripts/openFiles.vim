@@ -5,7 +5,7 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if winheight(".") < 36
+if winheight(".") < 50
     echohl Error
     echomsg "The terminal has " . winheight(".") . " lines."
     echomsg "The terminal must have 36 lines."
@@ -13,7 +13,7 @@ if winheight(".") < 36
     call input("Press <Enter> to finish.")
     finish
 endif
-if winwidth(".") < 124
+if winwidth(".") < 160
     echohl Error
     echomsg "The terminal has " . winwidth(".") . " columns."
     echomsg "The terminal must have 124 columns."
@@ -24,39 +24,64 @@ endif
 
 
 set switchbuf=useopen
+set nowrap
 
 e statistics.R
-vsplit example.py
-vsplit example.c
-split email.eml
-sb 3
-split webpage.php
-sb 2
-split patch.diff
-
-sb 2
-set nowrap
-normal gg
-sb 3
-set nowrap
-normal gg
-sb 4
-set nowrap
-normal gg
-sb 5
-resize +2
-vertical resize +1
-set nowrap
-normal gg
-sb 6
-set nowrap
-resize +4
-vertical resize +4
-normal gg
-sb 7
-set nowrap
+let b1 = nvim_get_current_buf()
 normal gg
 
+vsplit
+e example.py
+let b2 = nvim_get_current_buf()
+normal gg
 
-sb 5
-normal 7j3wv2E
+vsplit
+e example.c
+let b3 = nvim_get_current_buf()
+normal gg
+
+split
+e email.eml
+let b4 = nvim_get_current_buf()
+normal gg
+
+split
+e webpage.php
+let b5 = nvim_get_current_buf()
+normal gg
+
+exe 'sb ' . b2
+redraw
+split
+redraw
+e patch.diff
+let b6 = nvim_get_current_buf()
+normal gg
+
+split
+e d3.js
+let b7 = nvim_get_current_buf()
+normal gg
+
+exe 'sb ' . b1
+redraw
+split
+redraw
+e uptime.rs
+let b8 = nvim_get_current_buf()
+normal gg
+
+split
+redraw
+e init.lua
+let b9 = nvim_get_current_buf()
+normal gg
+
+redraw
+exe 'sb ' . b8
+vertical resize +13
+
+redraw
+exe 'sb ' . b4
+call nvim_win_set_cursor(0, [8, 15])
+normal v2e

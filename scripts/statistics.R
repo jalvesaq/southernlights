@@ -1,4 +1,3 @@
-
 library(foreign)
 detach("package:datasets")
 x <- rnorm(1)
