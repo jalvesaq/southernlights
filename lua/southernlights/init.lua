@@ -1,5 +1,5 @@
 local c = {
-    float_bg = vim.o.winborder == "none" and "#3a3a3a" or "#000000",
+    float_bg = (vim.fn.has("nvim-0.11") == 0 or vim.o.winborder == "none") and "#3a3a3a" or "#000000",
     windiv_bg = "#585858",
     function_fg = "#87d7ff",
     title_fg = "#00d7ff",
