@@ -1,27 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " To open all files, type (in Normal mode):
 "   
-"   :so %
+"   :so
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-if winheight(".") < 50
-    echohl Error
-    echomsg "The terminal has " . winheight(".") . " lines."
-    echomsg "The terminal must have 36 lines."
-    echohl Normal
-    call input("Press <Enter> to finish.")
-    finish
-endif
-if winwidth(".") < 160
-    echohl Error
-    echomsg "The terminal has " . winwidth(".") . " columns."
-    echomsg "The terminal must have 124 columns."
-    echohl Normal
-    call input("Press <Enter> to finish.")
-    finish
-endif
-
 
 set switchbuf=useopen
 set nowrap
