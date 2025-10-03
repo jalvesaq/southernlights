@@ -11,6 +11,7 @@ local c = {
 }
 
 local basic_tbl = {
+    Normal = { fg = c.normal_fg, bg = "#000000" },
     Boolean = { fg = "#ff875f" },
     Comment = { fg = "#afafff" },
     Conditional = { fg = "#ffff87" },
@@ -36,7 +37,6 @@ local basic_tbl = {
     Method = { fg = c.function_fg, italic = true },
     MoreMsg = { fg = "#00af87" },
     NonText = { fg = "#0000ff" },
-    Normal = { fg = c.normal_fg, bg = "#000000" },
     NormalFloat = { fg = c.normal_fg, bg = c.float_bg },
     Number = { fg = "#ffd7af" },
     Operator = { fg = "#ff8700" },
