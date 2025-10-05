@@ -1,5 +1,6 @@
 local c = {
-    float_bg = (vim.fn.has("nvim-0.11") == 0 or vim.o.winborder == "none") and "#3a3a3a" or "#000000",
+    float_bg = (vim.fn.has("nvim-0.11") == 0 or vim.o.winborder == "none") and "#3a3a3a"
+        or "#000000",
     windiv_bg = "#585858",
     function_fg = "#87d7ff",
     title_fg = "#00d7ff",
@@ -278,26 +279,6 @@ local link_tbl = {
     wdiffNew = basic_tbl.diffAdded,
 
     mailURL = basic_tbl.htmlLink,
-
-    -- nvim-cmp
-    -- CmpItemAbbr guibg=NONE
-    CmpItemAbbrDeprecated = { strikethrough = true },
-    CmpItemAbbrMatch = { fg = "#569CD6" },
-    CmpItemAbbrMatchFuzzy = { fg = "#569CD6" },
-    CmpItemKindKeyword = basic_tbl.Keyword,
-    CmpItemKindProperty = basic_tbl.Constant,
-    CmpItemKindUnit = basic_tbl.Include,
-    CmpItemKindFunction = basic_tbl.Function,
-    CmpItemKindStruct = basic_tbl.Type,
-    CmpItemKindMethod = basic_tbl.Method,
-    CmpItemKindText = basic_tbl.String,
-    CmpItemKindValue = basic_tbl.Numeric,
-    CmpItemKindField = basic_tbl.Special,
-    CmpItemKindConstructor = basic_tbl.Statement,
-    CmpItemKindClass = basic_tbl.Type,
-    CmpItemKindInterface = basic_tbl.Include,
-    CmpItemKindModule = basic_tbl.PreProc,
-    CmpItemKindVariable = basic_tbl.Variable,
 }
 
 local M = {}
@@ -307,22 +288,6 @@ M.load = function()
     if vim.g.colors_name then vim.cmd("hi clear") end
     vim.o.termguicolors = true
     vim.g.colors_name = "southernlights"
-
-    -- -- Debug:
-    -- for k1, v1 in pairs(basic_tbl) do
-    --     for k2, v2 in pairs(basic_tbl) do
-    --         if
-    --             k1 ~= k2
-    --             and v1.fg == v2.fg
-    --             and v1.bg == v2.bg
-    --             and v1.italic == v2.italic
-    --             and v1.bold == v2.bold
-    --             and v1.underline == v2.underline
-    --         then
-    --             print("Same: " .. k1 .. " and " .. k2)
-    --         end
-    --     end
-    -- end
 
     for k, v in pairs(basic_tbl) do
         vim.api.nvim_set_hl(0, k, v)
